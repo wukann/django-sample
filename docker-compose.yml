@@ -1,10 +1,10 @@
 version: '2'
 services:
   db:
-    build: ./db
+    image: postgres
     container_name: db
   web:
-    build: ./web
+    build: .
     container_name: web
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
