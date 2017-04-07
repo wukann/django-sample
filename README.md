@@ -2,10 +2,23 @@
 
 Python & Django 学習のためのサンプルアプリケーション
 
-## 環境
+## 開発環境
 
 - Windows 10
 - Docker for Windows
+
+## Get started
+
+アプリケーションを動作させるには、clone直後に下記作業が必要。
+- コンテナイメージのビルド
+- コンテナ立ち上げ
+- DBコンテナ(Postgresql)へのDB作成
+
+以下のコマンドで上記を実施できる。
+
+```powershell
+PS > .\manage-run.ps1 migrate
+```
 
 ## メモ
 
