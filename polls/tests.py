@@ -45,3 +45,24 @@ def create_question(question_text, days):
     """
     time = timezone.now() + datetime.timedelta(days=days)
     return Question.objects.create(question_text=question_text, pub_date=time)
+
+
+class QuestionViewTests(TestCase):
+    def test_index_view_with_no_questions(self):
+        """
+        If no questions exist, an appropriate message should be displayed.
+        """
+        response = self.client.get(reverse('polls:index'))
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, 'No polls are available.')
+        self.assertQuerysetEqual(response.context['latest_question_list'], [])
+
+    def test_index_view_with_a_past_question(self):
+        """
+        Questions with a pub_date in the past should be displayed on the
+        index page.
+        """
+        create_question('Past question.', -30)
+        response = self.client.get(reverse('polls:index'))
+        self.assertContains(response, 'Past question.')
+        self.assertQuerysetEqual(response.context['latest_question_list'], ['<Question: Past question.>'])
