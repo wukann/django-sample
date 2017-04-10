@@ -30,6 +30,13 @@ Password (again): [管理者パスワード入力]
 Superuser created successfully.
 ```
 
+## テスト実行
+
+テスト対象のアプリケーション名がpollsの場合：
+```
+PS > .\manage-run.ps1 test polls
+```
+
 ## メモ
 
 ### PowerShellコンソールから`docker-compose`を実行するとエラーになる問題
