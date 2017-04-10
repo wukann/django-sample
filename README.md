@@ -20,6 +20,16 @@ Python & Django 学習のためのサンプルアプリケーション
 PS > .\manage-run.ps1 migrate
 ```
 
+```powershell
+PS > .\manage-run.ps1 createsuperuser
+...
+Username (leave blank to use 'root'): [管理者アカウント入力]
+Email address: [管理者メールアドレス入力]
+Password: [管理者パスワード入力]
+Password (again): [管理者パスワード入力]
+Superuser created successfully.
+```
+
 ## メモ
 
 ### PowerShellコンソールから`docker-compose`を実行するとエラーになる問題
