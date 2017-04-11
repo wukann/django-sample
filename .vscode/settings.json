@@ -1,0 +1,7 @@
+// 既定の設定とユーザー設定を上書きするには、このファイル内に設定を挿入します
+{
+    "python.autoComplete.extraPaths": [
+        "C:/Python36/Lib/site-packages"
+    ],
+    "python.linting.pylintArgs": ["--load-plugins", "pylint_django"]
+}
