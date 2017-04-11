@@ -66,3 +66,10 @@ class QuestionViewTests(TestCase):
         response = self.client.get(reverse('polls:index'))
         self.assertContains(response, 'Past question.')
         self.assertQuerysetEqual(response.context['latest_question_list'], ['<Question: Past question.>'])
+
+    def test_index_view_with_a_feature_question(self):
+        """
+        Questions with a pub_date in the future should not be displayed on
+        the index page.
+        """
+        pass
